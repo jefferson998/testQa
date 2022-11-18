@@ -14,7 +14,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       
-      - name: Install a project with a clean slate
+      - name: Install a project with a clean state
         run: |
           npm ci
           $(npm bin)/cypress cache path
@@ -29,6 +29,6 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./cypress/reports
+          publish_dir: ./cypress/reports/index.html
           user_name: 'github-actions[bot]'
           user_email: 'github-actions[bot]@users.noreply.github.com'
