@@ -1,6 +1,11 @@
 const { defineConfig } = require("cypress");
 
 module.exports = defineConfig({
+
+  // reporter: "cypress-multi-reporters",
+  // reporterOptions: {
+  //       configFile: "reporter-config.json"
+  // },
   screenshotOnRunFailure:true,
   reporter: 'cypress-mochawesome-reporter',
   reporterOptions: {
@@ -11,6 +16,7 @@ module.exports = defineConfig({
     inlineAssets: true,
     saveAllAttempts: false
   },
+  video:true,
   e2e: {
     viewportWidth: 1920,
     viewportHeight: 1080,
