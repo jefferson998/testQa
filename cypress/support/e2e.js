@@ -15,6 +15,11 @@
 
 // Import commands.js using ES2015 syntax:
 import './commands'
+import 'cypress-mochawesome-reporter/register';
 
+import addContext from 'mochawesome/addContext';
+Cypress.Commands.add('addContext', (context) => {
+    cy.once('test:after:run', (test) => addContext({ test }, context));
+  });
 // Alternatively you can use CommonJS syntax:
 // require('./commands')

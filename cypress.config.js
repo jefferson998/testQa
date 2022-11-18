@@ -1,5 +1,6 @@
 const { defineConfig } = require("cypress");
 
+
 module.exports = defineConfig({
 
   // reporter: "cypress-multi-reporters",
@@ -16,12 +17,16 @@ module.exports = defineConfig({
     inlineAssets: true,
     saveAllAttempts: false
   },
-  video:true,
+  video:false,
   e2e: {
-    viewportWidth: 1920,
-    viewportHeight: 1080,
+    viewportWidth: 1366,
+    viewportHeight: 768,
     setupNodeEvents(on, config) {
       require('cypress-mochawesome-reporter/plugin')(on);
+
+
     },
+    
   },
 });
+
